@@ -1,6 +1,10 @@
 
+author: W_littlewhite
+
 # html lang
 language: en
+
+title: HelianthusWhite
 
 # main menu navigation
 menu:
@@ -15,7 +19,15 @@ favicon: /favicon.ico
 # stylesheets loaded in the <head>
 stylesheets:
 - /css/mytheme.css
+- /css/reset.css
 
 # scripts loaded in the end of the body
 scripts:
+- /js/three.min.js
+- /js/projector.js
+- /js/canvas-renderer.js
+- /js/3d-lines-animation.js
 - /js/mytheme.js
+
+
+
