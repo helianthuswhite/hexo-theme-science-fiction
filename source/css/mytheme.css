@@ -1,3 +1,28 @@
+/*#72FFEE*/
+.background {
+    position: absolute;
+    right: 10px;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 0px 20px 10px #72FFEE inset;
+}
+.background > div {
+    float: left;
+    border-top: solid 1px #09192A;
+    border-bottom: solid 1px #09192A;
+    box-shadow: 0px 0px 0px #72FFEE,
+        -15px 5px 15px #72FFEE,
+        -15px -5px 15px #72FFEE,
+        0px 0px 0px #72FFEE;
+}
+.background_1 {
+    width: 18.74%;
+    height: calc(100% - 160px);
+    margin-top: 100px;
+}
 #canvas {
     width: 100%;
     height: 100%;
@@ -7,12 +32,25 @@
 }
 .canvas-wrap {
     position: relative;
+    width: 100%;
     height: 100%;
 }
 .canvas-wrap.canvas-content{
     position:relative;
     z-index:2000;
+    height: 100%;
     color:#fff;
     text-align:center;
     padding-top:30px;
+}
+#menu-outer {
+    position: absolute;
+    left: 50%;
+    margin-left: -200px;
+    margin-top: 150px;
+    z-index: 99999;
+    width: 400px;
+    height: 300px;
+    border: solid 1px #77C0FD;
+    box-shadow: 0 0 5px 0 #77C0FD;
 }
