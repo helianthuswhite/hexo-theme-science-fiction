@@ -11,17 +11,19 @@
 }
 .background > div {
     float: left;
-    border-top: solid 1px #09192A;
-    border-bottom: solid 1px #09192A;
-    box-shadow: 0px 0px 0px #72FFEE,
-        -15px 5px 15px #72FFEE,
-        -15px -5px 15px #72FFEE,
-        0px 0px 0px #72FFEE;
+    border-top: solid 1px #72FFEE;
+    border-bottom: solid 1px #72FFEE;
+    /*box-shadow: 0px 5px 15px #72FFEE;*/
 }
 .background_1 {
     width: 18.74%;
     height: calc(100% - 160px);
     margin-top: 100px;
+}
+.background_2 {
+    width: 6.25%;
+    height: calc(100% - 80px);
+    margin-top: 50px;
 }
 #canvas {
     width: 100%;
