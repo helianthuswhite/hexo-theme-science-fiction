@@ -1,6 +1,6 @@
 //获取屏幕的大小
-var Height = window.screen.height;
-var Width = window.screen.width;
+var Height = document.body.clientHeight;
+var Width = document.body.clientWidth;
 
 
 window.onload = function () {
@@ -8,6 +8,7 @@ window.onload = function () {
 	var cxt=c.getContext("2d");
 	ResizeCanvas(c);
 	DrawBg(cxt);
+	DrawCircle(cxt);
 }
 
 //根据屏幕大小改变canvas大小 
@@ -15,6 +16,7 @@ function ResizeCanvas(canvas) {
 	canvas.setAttribute('width',Width);
 	canvas.setAttribute('height',Height);
 }
+
 //绘制背景线条
 function DrawBg(cxt) {
 	var width_1 = 0.1875 * Width; 
@@ -29,8 +31,8 @@ function DrawBg(cxt) {
 	var height_2 = Height - 30;
 	var height_3 = Height - 50;
 	var height_4 = Height - 80;
-	console.log(Height);
 
+	cxt.beginPath();
 	//绘制上路径
 	cxt.moveTo(0,80);
 	cxt.lineTo(width_1,80);
@@ -58,4 +60,32 @@ function DrawBg(cxt) {
 	cxt.shadowOffsetX = 0;
 	cxt.shadowOffsetY = -3;
 	cxt.stroke();
+	cxt.closePath();
+}
+
+//绘制旋转的圆
+function DrawCircle(cxt) {
+	var height = Height / 2;
+	var width = 0.2*Width;
+
+	cxt.beginPath();
+	cxt.lineWidth = 10;
+	cxt.strokeStyle="#72FFEE";
+	cxt.shadowBlur = 0;
+	cxt.shadowOffsetY = 0;
+	cxt.arc(width,height + 50,50,0,Math.PI*0.25,true);
+	cxt.stroke();
+	cxt.closePath();
+
+	cxt.beginPath()
+	cxt.lineWidth = 6;
+	cxt.arc(width,height + 50,35,0,Math.PI*1.6,false);
+	cxt.stroke();
+	cxt.closePath();
+
+	cxt.beginPath()
+	cxt.lineWidth = 20;
+	cxt.arc(width,height + 50,15,0,Math.PI*0.5,true);
+	cxt.stroke();
+	cxt.closePath();
 }
