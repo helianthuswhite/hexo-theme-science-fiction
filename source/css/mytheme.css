@@ -49,21 +49,9 @@
 #info h2 {
     text-align: center;
     color: #72FFEE;
-    animation: neon6 1.5s ease-in-out infinite alternate;
+    animation: text_color 1.5s ease-in-out infinite alternate;
 }
-#info p {
-    margin: 15px 0;
-    color: #77C0FD;
-    text-align: center;
-}
-#info a {
-    display: inline-block;
-    font-size: 40px;
-    text-align: center;
-    color: #72ffee;
-}
-
-@keyframes neon6 {
+@keyframes text_color {
   from {
     text-shadow: 0 0 10px #fff,
                0 0 20px  #fff,
@@ -86,3 +74,19 @@
                0 0 75px #77c0fd;
   }
 }
+#info p {
+    margin: 15px 0;
+    color: #77C0FD;
+    text-align: center;
+}
+#info a {
+    display: inline-block;
+    font-size: 40px;
+    text-align: center;
+    color: #72FFEE;
+}
+#info a:hover {
+    text-shadow: 0 0 20px #72FFEE;
+}
+
+
