@@ -89,11 +89,30 @@
     text-shadow: 0 0 20px #72FFEE;
 }
 #index_menu {
-    width: 44%;
-    height: 20%;
+    width: 46%;
+    height: 30%;
     position: absolute;
     right: 26%;
     top: 65%;
-    border: solid 1px #72ffee;
+    /*border: solid 1px #72ffee;*/
 }
-
+#index_menu .menu_box {
+    position: absolute;
+    top: 0px;
+}
+#index_menu .menu_box a {
+    position: relative;
+    display: block;
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin: 0 30px;
+    z-index: 9999;
+    /*border: solid 1px #72ffee;*/
+}
+#index_menu .menu_box a:nth-child(2n) {
+    margin-top: 100px;
+}
+#index_menu .menu_box a > span {
+    display: none;
+}
