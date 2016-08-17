@@ -1,13 +1,18 @@
 <div class="background">
     <canvas id="bg_canvas" style=""></canvas>
 </div>
-<div class="index_main">
-	
+<div id="index_main">
+	<div class="photo">
+		<img src="<%=theme.photo%>">
+	</div>
+	<div class="info">
+		
+	</div>
 </div>
-<div class="index_menu">
+<div id="index_menu">
 	<% Object.keys(theme.menu).forEach(function(key) { %>
 	<div>
 		<a href="<%=theme.menu[key]%>"><%=key%></a>
 	</div>
-          <% }); %>
+    <% }); %>
 </div>

@@ -1,4 +1,4 @@
-/*#72FFEE*/
+/*#72FFEE  #77C0FD*/
 .background {
     position: absolute;
     right: 10px;
@@ -21,14 +21,24 @@
     width: 100%;
     height: 100%;
 }
-#menu-outer {
+#index_main {
     position: absolute;
-    left: 50%;
-    margin-left: -200px;
-    margin-top: 150px;
-    z-index: 99999;
-    width: 400px;
-    height: 300px;
-    border: solid 1px #77C0FD;
-    box-shadow: 0 0 5px 0 #77C0FD;
+    background: rgba(119,192,253,0.5);
+    /*border: solid 1px #72FFEE;*/
+}
+#index_main .photo {
+    position: absolute;
+    margin-left: 50px;
+    top: 50%;
+    margin-top: -90px;
+    width: 150px;
+    width: 150px;
+    padding: 10px;
+    padding-bottom: 0px;
+    border: solid 2px #72FFEE;
+    box-shadow: 0px 0px 5px 0px #77C0FD;
+}
+#index_main .photo img {
+    width: 150px;
+    height: 150px;
 }

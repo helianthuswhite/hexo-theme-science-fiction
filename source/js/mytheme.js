@@ -6,16 +6,22 @@ var Width = document.body.clientWidth;
 window.onload = function () {
 	var c=document.getElementById("bg_canvas");
 	var cxt=c.getContext("2d");
-	ResizeCanvas(c);
+	Resize(c,Width,Height);
 	DrawBg(cxt);
 	DrawCircle(cxt);
 	DrawLines(cxt);
+
+	var index_main = document.getElementById('index_main');
+	index_main.style.width = 0.45*Width - 20 + 'px';
+	index_main.style.height = 0.4*Height + 'px';
+	index_main.style.top = 0.2*Height - 20 + 'px';
+	index_main.style.left = 0.3*Width + 'px';
 }
 
-//根据屏幕大小改变canvas大小 
-function ResizeCanvas(canvas) {
-	canvas.setAttribute('width',Width);
-	canvas.setAttribute('height',Height);
+//根据屏幕大小改变元素大小 
+function Resize(object,width,height) {
+	object.setAttribute('width',width);
+	object.setAttribute('height',height);
 }
 
 //绘制背景外框线条
@@ -66,7 +72,7 @@ function DrawBg(cxt) {
 
 //绘制旋转的圆
 function DrawCircle(cxt) {
-	var height = Height / 2;
+	var height = Height*0.7;
 	var width = 0.2*Width;
 
 	cxt.beginPath();
@@ -94,10 +100,10 @@ function DrawCircle(cxt) {
 //绘制中间线条
 function DrawLines(cxt) {
 	var width_1 = 0.2*Width;
-	var width_2 = 0.35*Width;
+	var width_2 = 0.3*Width;
 	var width_3 = 0.75*Width;
-	var height_1 = 0.5*Height + 50;
-	var height_2 = 0.25*Height;
+	var height_1 = 0.7*Height + 50;
+	var height_2 = 0.6*Height;
 
 	cxt.beginPath();
 	cxt.moveTo(width_1,height_1);

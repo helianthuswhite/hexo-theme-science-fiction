@@ -1,5 +1,5 @@
 
-author: W_littlewhite
+author: HelianthusWhite
 
 # html lang
 language: en
@@ -29,6 +29,8 @@ scripts:
 - /js/canvas-renderer.js
 - /js/3d-lines-animation.js
 - /js/mytheme.js
+
+photo: /img/photo.jpg
 
 
 
