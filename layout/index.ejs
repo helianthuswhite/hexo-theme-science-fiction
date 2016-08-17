@@ -2,11 +2,24 @@
     <canvas id="bg_canvas" style=""></canvas>
 </div>
 <div id="index_main">
-	<div class="photo">
+	<div id="photo">
 		<img src="<%=theme.photo%>">
 	</div>
-	<div class="info">
-		
+	<div id="info">
+		<h2><%=theme.author%></h2>
+		<p>
+			<% Object.keys(theme.introduction).forEach(function(key) { %>
+				<%=theme.introduction[key]%>
+				<br />
+		    <% }); %>
+		</p>
+		<p class="contact">
+			<% Object.keys(theme.contact).forEach(function(key) { %>
+			<a href="<%=theme.contact_address[key]%>" target="_blank" alt="<%=theme.contact[key]%>">
+				<i class="fa fa-<%=theme.contact_logo[key]%>"></i>
+			</a>
+	    	<% }); %>
+		</p>
 	</div>
 </div>
 <div id="index_menu">

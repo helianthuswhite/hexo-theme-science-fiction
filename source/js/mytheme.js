@@ -16,6 +16,14 @@ window.onload = function () {
 	index_main.style.height = 0.4*Height + 'px';
 	index_main.style.top = 0.2*Height - 20 + 'px';
 	index_main.style.left = 0.3*Width + 'px';
+
+	var photo = document.getElementById('photo');
+	photo.style.width = index_main.offsetWidth*0.2 + 'px';
+	photo.style.height = photo.style.width;
+	photo.style.marginTop = -0.5*photo.offsetHeight + 'px';
+
+	var info = document.getElementById('info');
+	info.style.marginTop = -0.45*info.offsetHeight + 'px';
 }
 
 //根据屏幕大小改变元素大小 

@@ -1,5 +1,31 @@
 
 author: HelianthusWhite
+photo: /img/photo.jpg
+
+#
+introduction: 
+- 一枚热爱前前端的在校学生
+- 代码为笔，窗口作纸，绘制出绚丽的图形
+
+contact: 
+- Github
+- Zhihu
+- Weibo
+- Email
+
+# your sns address
+contact_address: 
+- https://github.com/helianthuswhite
+- https://www.zhihu.com/people/wgun-littlewhite
+- http://weibo.com/u/5296321294
+- mailto:hyz19960229@gmail.com
+
+# the log from font-awesome
+contact_logo: 
+- github
+- mortar-board
+- weibo
+- google
 
 # html lang
 language: en
@@ -21,6 +47,7 @@ favicon: /favicon.ico
 stylesheets:
 - /css/mytheme.css
 - /css/reset.css
+- /css/font-awesome.min.css
 
 # scripts loaded in the end of the body
 scripts:
@@ -30,7 +57,7 @@ scripts:
 - /js/3d-lines-animation.js
 - /js/mytheme.js
 
-photo: /img/photo.jpg
+
 
 
 
