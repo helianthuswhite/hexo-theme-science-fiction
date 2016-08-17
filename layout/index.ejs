@@ -1,3 +1,13 @@
-
-<%-partial('partials/recent-posts')%>
-<%-partial('partials/pagination')%>
+<div class="background">
+    <canvas id="bg_canvas" style=""></canvas>
+</div>
+<div class="index_main">
+	
+</div>
+<div class="index_menu">
+	<% Object.keys(theme.menu).forEach(function(key) { %>
+	<div>
+		<a href="<%=theme.menu[key]%>"><%=key%></a>
+	</div>
+          <% }); %>
+</div>

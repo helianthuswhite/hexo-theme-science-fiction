@@ -9,6 +9,7 @@ window.onload = function () {
 	ResizeCanvas(c);
 	DrawBg(cxt);
 	DrawCircle(cxt);
+	DrawLines(cxt);
 }
 
 //根据屏幕大小改变canvas大小 
@@ -17,7 +18,7 @@ function ResizeCanvas(canvas) {
 	canvas.setAttribute('height',Height);
 }
 
-//绘制背景线条
+//绘制背景外框线条
 function DrawBg(cxt) {
 	var width_1 = 0.1875 * Width; 
 	var width_2 = 0.25*Width;
@@ -88,4 +89,45 @@ function DrawCircle(cxt) {
 	cxt.arc(width,height + 50,15,0,Math.PI*0.5,true);
 	cxt.stroke();
 	cxt.closePath();
+}
+
+//绘制中间线条
+function DrawLines(cxt) {
+	var width_1 = 0.2*Width;
+	var width_2 = 0.35*Width;
+	var width_3 = 0.75*Width;
+	var height_1 = 0.5*Height + 50;
+	var height_2 = 0.25*Height;
+
+	cxt.beginPath();
+	cxt.moveTo(width_1,height_1);
+	cxt.lineTo(width_2,height_2);
+	cxt.lineTo(width_3,height_2);
+
+	cxt.lineWidth = 5;
+	cxt.lineCap="round";
+	cxt.strokeStyle = "#72FFEE";
+	cxt.shadowColor = "#77C0FD";
+	cxt.shadowBlur = 10;
+	cxt.shadowOffsetX = 0;
+	cxt.shadowOffsetY = 0;
+	cxt.stroke();
+	cxt.closePath();
+
+	cxt.beginPath()
+	cxt.lineWidth = 10;
+	cxt.arc(width_3,height_2,5,0,Math.PI*2,true);
+	cxt.stroke();
+	cxt.closePath();
+
+	//旋转画布之前保存画布状态
+	cxt.save();
+	cxt.beginPath()
+	cxt.lineWidth = 2;
+	cxt.translate(width_3,height_2);
+	cxt.rotate(Math.PI*0.85);
+	cxt.arc(0,0,15,0,Math.PI*0.3,true);
+	cxt.stroke();
+	cxt.closePath();
+	cxt.restore();
 }
