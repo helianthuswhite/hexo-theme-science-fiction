@@ -25,6 +25,14 @@ window.onload = function () {
 
 	var info = document.getElementById('info');
 	info.style.marginTop = -0.45*info.offsetHeight + 'px';
+
+	var menu_tags = document.getElementById('index_menu').getElementsByTagName('a');
+	for (var i = 0; i < menu_tags.length; i++) {
+		menu_tags[i].style.width = 0.05*Width + 'px';
+		menu_tags[i].style.height = menu_tags[i].style.width;
+		menu_tags[i].style.marginLeft = 0.03*Width + 'px';
+		menu_tags[i].style.marginRight = 0.01*Width + 'px';
+	}	
 }
 
 //根据屏幕大小改变元素大小 
@@ -155,79 +163,74 @@ function DrawMenu() {
 	c.height = index_menu.offsetHeight;
 	var cxt = c.getContext('2d');
 
-	cxt.beginPath();
+	cxt.shadowColor = '#72FFEE';
+	cxt.strokeStyle = '#72FFEE';
+	cxt.shadowBlur = 5;
+	cxt.shadowOffsetY = 0;
+	cxt.shadowOffsetX = 0;
 	cxt.lineWidth = 2;
+
+	cxt.beginPath();
 	cxt.fillStyle = '#FE00C3';
-	cxt.moveTo(80,38);
-	cxt.lineTo(65,62);
-	cxt.lineTo(95,62);
+	cxt.moveTo(0.14*Width/3,0.0467*Width/4);
+	cxt.lineTo(0.19*Width/3,0.0467*Width/4);
+	cxt.lineTo(0.055*Width,0.0467*Width/1.732);
 	cxt.fill();
 	cxt.closePath();
 
 	cxt.beginPath();
-	cxt.lineWidth = 2;
-	cxt.strokeStyle = '#72FFEE';
-	cxt.moveTo(80,4);
-	cxt.lineTo(35,76);
-	cxt.lineTo(125,76);
-	cxt.lineTo(80,4);
+	cxt.moveTo(0.03*Width,0);
+	cxt.lineTo(0.08*Width,0);
+	cxt.lineTo(0.055*Width,0.0467*Width);
+	cxt.lineTo(0.03*Width,0);
 	cxt.stroke();
 	cxt.closePath();
 
 	cxt.beginPath();
-	cxt.lineWidth = 2;
 	cxt.fillStyle = '#1AA406';
-	cxt.moveTo(240,138);
-	cxt.lineTo(225,162);
-	cxt.lineTo(255,162);
+	cxt.moveTo(0.41*Width/3,0.1553*Width/4 + 100);
+	cxt.lineTo(0.46*Width/3,0.1553*Width/4 + 100);
+	cxt.lineTo(0.145*Width,0.1086*Width/4 + 98);
 	cxt.fill();
 	cxt.closePath();
 
 	cxt.beginPath();
-	cxt.lineWidth = 2;
-	cxt.strokeStyle = '#72FFEE';
-	cxt.moveTo(240,106);
-	cxt.lineTo(195,176);
-	cxt.lineTo(285,176);
-	cxt.lineTo(240,106);
+	cxt.moveTo(0.12*Width,0.05*Width + 100);
+	cxt.lineTo(0.17*Width,0.05*Width + 100);
+	cxt.lineTo(0.145*Width,0.0033*Width + 102);
+	cxt.lineTo(0.12*Width,0.05*Width + 100);
 	cxt.stroke();
 	cxt.closePath();
 
 	cxt.beginPath();
-	cxt.lineWidth = 2;
 	cxt.fillStyle = '#214FE3';
-	cxt.moveTo(400,38);
-	cxt.lineTo(385,62);
-	cxt.lineTo(415,62);
+	cxt.moveTo(0.68*Width/3,0.0467*Width/4);
+	cxt.lineTo(0.73*Width/3,0.0467*Width/4);
+	cxt.lineTo(0.235*Width,0.0467*Width/1.732);	
 	cxt.fill();
 	cxt.closePath();
 
 	cxt.beginPath();
-	cxt.lineWidth = 2;
-	cxt.strokeStyle = '#72FFEE';
-	cxt.moveTo(400,4);
-	cxt.lineTo(355,76);
-	cxt.lineTo(445,76);
-	cxt.lineTo(400,4);
+	cxt.moveTo(0.21*Width,0);
+	cxt.lineTo(0.26*Width,0);
+	cxt.lineTo(0.235*Width,0.0467*Width);
+	cxt.lineTo(0.21*Width,0);
 	cxt.stroke();
 	cxt.closePath();
 
 	cxt.beginPath();
-	cxt.lineWidth = 2;
 	cxt.fillStyle = '#DFB201';
-	cxt.moveTo(560,138);
-	cxt.lineTo(545,162);
-	cxt.lineTo(575,162);
+	cxt.moveTo(0.95*Width/3,0.1553*Width/4 + 100);
+	cxt.lineTo(1*Width/3,0.1553*Width/4 + 100);
+	cxt.lineTo(0.325*Width,0.1086*Width/4 + 98);
 	cxt.fill();
 	cxt.closePath();
 
 	cxt.beginPath();
-	cxt.lineWidth = 2;
-	cxt.strokeStyle = '#72FFEE';
-	cxt.moveTo(560,106);
-	cxt.lineTo(515,176);
-	cxt.lineTo(605,176);
-	cxt.lineTo(560,106);
+	cxt.moveTo(0.30*Width,0.05*Width + 100);
+	cxt.lineTo(0.35*Width,0.05*Width + 100);
+	cxt.lineTo(0.325*Width,0.0033*Width + 102);
+	cxt.lineTo(0.30*Width,0.05*Width + 100);
 	cxt.stroke();
 	cxt.closePath();
 

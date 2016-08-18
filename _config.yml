@@ -4,7 +4,7 @@ photo: /img/photo.jpg
 
 #
 introduction: 
-- 一枚热爱前前端的在校学生
+- 唯音乐与书不可辜负，唯理想与你不可遗忘
 - 代码为笔，窗口作纸，绘制出绚丽的图形
 
 contact: 
@@ -35,8 +35,8 @@ title: HelianthusWhite
 # main menu navigation
 menu:
   Home: /
-  About: /about
   Archives: /archives
+  About: /about
   Contact: /contact
   
 

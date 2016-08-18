@@ -92,7 +92,7 @@
     width: 46%;
     height: 30%;
     position: absolute;
-    right: 26%;
+    right: 22%;
     top: 65%;
     /*border: solid 1px #72ffee;*/
 }
@@ -103,10 +103,8 @@
 #index_menu .menu_box a {
     position: relative;
     display: block;
-    width: 100px;
-    height: 100px;
+    box-sizing: border-box;
     float: left;
-    margin: 0 30px;
     z-index: 9999;
     /*border: solid 1px #72ffee;*/
 }
