@@ -93,6 +93,7 @@ function DrawCircle() {
 	var cxt = c.getContext('2d');
 	var height = Height*0.7 + 50;
 	var width = 0.2*Width;
+	var i = 1;
 	c.style.top = height - 75 + 'px';
 	c.style.left = width - 75 + 'px';
 
@@ -100,39 +101,43 @@ function DrawCircle() {
 	cxt.strokeStyle="#72FFEE";
 	cxt.shadowBlur = 0;
 	cxt.shadowOffsetY = 0;
-
-	// setInterval(function(){
- //            cxt.clearRect(0, 0, c.width, c.height);
- //            cxt.save();
- //            cxt.beginPath();
-	// 		cxt.translate(75,75);
-	// 		cxt.arc(0,0,50,0,Math.PI*0.25,true);
-	// 		cxt.stroke();
-	// 		cxt.closePath(); 
-	// 		cxt.restore();
-
-	// 		cxt.beginPath()
-	// 		cxt.lineWidth = 6;
-	// 		cxt.arc(width,height,35,0,Math.PI*1.6,false);
-	// 		cxt.stroke();
-	// 		cxt.closePath();
-
-	// 		cxt.beginPath()
-	// 		cxt.lineWidth = 20;
-	// 		cxt.arc(width,height,15,0,Math.PI*0.5,true);
-	// 		cxt.stroke();
-	// 		cxt.closePath();
-
-	// 		i++;
-
- //        },16);
-
-            cxt.beginPath();
-			cxt.translate(75,75);
-			cxt.rotate(120*Math.PI/180);
+	
+ 	setInterval(
+ 		function() {
+	 		cxt.clearRect(0, 0, c.width, c.height);
+	        cxt.beginPath();
+	        cxt.save();
+	        cxt.translate(75,75);
+			cxt.rotate(i*Math.PI/120);
 			cxt.arc(0,0,50,0,Math.PI*0.25,true);
 			cxt.stroke();
+			cxt.restore();
 			cxt.closePath(); 
+
+			cxt.beginPath()
+			cxt.save();
+			cxt.translate(75,75);
+			cxt.rotate(i*Math.PI/60);
+			cxt.lineWidth = 6;
+			cxt.globalAlpha=0.5;
+			cxt.arc(0,0,35,0,Math.PI*1.6,false);
+			cxt.stroke();
+			cxt.restore();
+			cxt.closePath();
+
+			cxt.beginPath()
+			cxt.save();
+			cxt.translate(75,75);
+			cxt.rotate(i*Math.PI/30);
+			cxt.lineWidth = 15;
+			cxt.arc(0,0,15,0,Math.PI*0.5,true);
+			cxt.stroke();
+			cxt.restore();
+			cxt.closePath();
+
+			i++;
+ 	},16);
+
 }
 
 //绘制中间线条
