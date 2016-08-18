@@ -33,6 +33,7 @@ language: en
 title: HelianthusWhite
 
 # main menu navigation
+# four limited
 menu:
   Home: /
   Archives: /archives
@@ -55,7 +56,7 @@ scripts:
 - /js/projector.js
 - /js/canvas-renderer.js
 - /js/3d-lines-animation.js
-- /js/mytheme.js
+- /js/init.js
 
 
 

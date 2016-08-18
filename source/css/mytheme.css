@@ -109,7 +109,6 @@
     box-sizing: border-box;
     float: left;
     z-index: 9999;
-    /*box-shadow:0px 0px 20px 0px #333333;*/
 }
 #index_menu .menu_box a:nth-child(2n) {
     margin-top: 100px;
