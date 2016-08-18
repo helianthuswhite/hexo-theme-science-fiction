@@ -4,11 +4,11 @@ var Width = document.body.clientWidth;
 
 
 window.onload = function () {
-	var c=document.getElementById("bg_canvas");
+	var c=document.getElementById("line_canvas");
 	var cxt=c.getContext("2d");
 	Resize(c,Width,Height);
 	DrawBg(cxt);
-	DrawCircle(cxt);
+	DrawCircle();
 	DrawLines(cxt);
 	DrawMenu();
 
@@ -88,30 +88,51 @@ function DrawBg(cxt) {
 }
 
 //绘制旋转的圆
-function DrawCircle(cxt) {
-	var height = Height*0.7;
+function DrawCircle() {
+	var c = document.getElementById('circle_canvas');
+	var cxt = c.getContext('2d');
+	var height = Height*0.7 + 50;
 	var width = 0.2*Width;
+	c.style.top = height - 75 + 'px';
+	c.style.left = width - 75 + 'px';
 
-	cxt.beginPath();
 	cxt.lineWidth = 10;
 	cxt.strokeStyle="#72FFEE";
 	cxt.shadowBlur = 0;
 	cxt.shadowOffsetY = 0;
-	cxt.arc(width,height + 50,50,0,Math.PI*0.25,true);
-	cxt.stroke();
-	cxt.closePath();
 
-	cxt.beginPath()
-	cxt.lineWidth = 6;
-	cxt.arc(width,height + 50,35,0,Math.PI*1.6,false);
-	cxt.stroke();
-	cxt.closePath();
+	// setInterval(function(){
+ //            cxt.clearRect(0, 0, c.width, c.height);
+ //            cxt.save();
+ //            cxt.beginPath();
+	// 		cxt.translate(75,75);
+	// 		cxt.arc(0,0,50,0,Math.PI*0.25,true);
+	// 		cxt.stroke();
+	// 		cxt.closePath(); 
+	// 		cxt.restore();
 
-	cxt.beginPath()
-	cxt.lineWidth = 20;
-	cxt.arc(width,height + 50,15,0,Math.PI*0.5,true);
-	cxt.stroke();
-	cxt.closePath();
+	// 		cxt.beginPath()
+	// 		cxt.lineWidth = 6;
+	// 		cxt.arc(width,height,35,0,Math.PI*1.6,false);
+	// 		cxt.stroke();
+	// 		cxt.closePath();
+
+	// 		cxt.beginPath()
+	// 		cxt.lineWidth = 20;
+	// 		cxt.arc(width,height,15,0,Math.PI*0.5,true);
+	// 		cxt.stroke();
+	// 		cxt.closePath();
+
+	// 		i++;
+
+ //        },16);
+
+            cxt.beginPath();
+			cxt.translate(75,75);
+			cxt.rotate(120*Math.PI/180);
+			cxt.arc(0,0,50,0,Math.PI*0.25,true);
+			cxt.stroke();
+			cxt.closePath(); 
 }
 
 //绘制中间线条
