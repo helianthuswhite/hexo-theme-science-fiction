@@ -97,7 +97,7 @@
     position: absolute;
     right: 22%;
     top: 65%;
-    /*border: solid 1px #72ffee;*/
+    border: solid 1px #72ffee;
 }
 #index_menu .menu_box {
     position: absolute;
@@ -109,10 +109,14 @@
     box-sizing: border-box;
     float: left;
     z-index: 9999;
+    /*border: solid 1px #72ffee;*/
 }
 #index_menu .menu_box a:nth-child(2n) {
     margin-top: 100px;
 }
 #index_menu .menu_box a > span {
     display: none;
+}
+#index_menu .menu_canvas {
+  position: absolute;
 }

@@ -24,13 +24,14 @@
 	</div>
 </div>
 <div id="index_menu">
-	<canvas id="menu_canvas"></canvas>
 	<div class="menu_box">
 	<% Object.keys(theme.menu).forEach(function(key) { %>
 		<a href="<%=theme.menu[key]%>" max-width='100px';
     max-height='100px;'>
+    		<canvas class="menu_canvas"></canvas>
 			<span><%=key%></span>
 		</a>
+		
     <% }); %>
     </div>
 </div>

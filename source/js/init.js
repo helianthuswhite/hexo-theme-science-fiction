@@ -9,7 +9,6 @@ window.onload = function () {
 	DrawBg(cxt);
 	DrawCircle();
 	DrawLines(cxt);
-	DrawMenu();
 
 	var index_main = document.getElementById('index_main');
 	index_main.style.width = 0.45*Width - 20 + 'px';
@@ -26,30 +25,56 @@ window.onload = function () {
 	info.style.marginTop = -0.45*info.offsetHeight + 'px';
 
 	var menu_tags = document.getElementById('index_menu').getElementsByTagName('a');
+	var menu_canvas = document.getElementById('index_menu').getElementsByTagName('canvas');
+	var context = new Array();
 	for (var i = 0; i < menu_tags.length; i++) {
-		menu_tags[i].index = i + 1;
-		menu_tags[i].style.width = 0.05*Width + 'px';
+		menu_tags[i].index = i;
+		menu_tags[i].style.width = 0.05*Width +'px';
 		menu_tags[i].style.height = menu_tags[i].style.width;
 		menu_tags[i].style.marginLeft = 0.03*Width + 'px';
 		menu_tags[i].style.marginRight = 0.01*Width + 'px';
+		menu_canvas[i].width = 0.05*Width + 5;
+		menu_canvas[i].height = menu_canvas[i].width;
+		context[i] = menu_canvas[i].getContext('2d');
+		context[i].shadowColor = '#72FFEE';
+		context[i].strokeStyle = '#72FFEE';
+		context[i].shadowBlur = 5;
+		context[i].shadowOffsetY = 0;
+		context[i].shadowOffsetX = 0;
+		context[i].lineWidth = 3;
+
+		switch(i) {
+			case 0 :
+				Draw_menu1(context[0]);
+				break;
+			case 1 :
+				Draw_menu2(context[1],0);
+				break;
+			case 2 :
+				Draw_menu3(context[2],0);
+				break;
+			case 3 :
+				Draw_menu4(context[3],0);
+				break;
+		}
+
 		menu_tags[i].onmouseover = function () {
-			var canvas = document.getElementById('menu_canvas');
-			var context = canvas.getContext('2d');
 			switch(this.index) {
+				case 0 :
+					context[0].translate(0,0);
+					context[0].rotate(Math.PI);
+					context[0].clearRect(0,0,menu_canvas[0].width,menu_canvas[0].height);
+					Draw_menu1(context[0]);
+					break;
 				case 1 :
-					Draw_menu1(cxt,1);
+					Draw_menu2(context[1],1);
 					break;
 				case 2 :
-					Draw_menu2(cxt,1);
+					Draw_menu3(context[2],1);
 					break;
 				case 3 :
-					Draw_menu3(cxt,1);
+					Draw_menu4(context[3],1);
 					break;
-				case 4 :
-					Draw_menu4(cxt,1);
-					break;
-				default :
-					DrawMenu();
 			}
 		}
 	}	
@@ -201,69 +226,26 @@ function DrawLines(cxt) {
 	cxt.restore();
 }
 
-//绘制菜单效果
-function DrawMenu() {
-	var c = document.getElementById('menu_canvas');
-	var index_menu = document.getElementById('index_menu');
-	c.width = index_menu.offsetWidth;
-	c.height = index_menu.offsetHeight;
-	var cxt = c.getContext('2d');
+function Draw_menu1 (cxt) {
+	cxt.beginPath();
+	cxt.fillStyle = '#FE00C3';
+	cxt.moveTo(0.05*Width/3,0.0467*Width/4);
+	cxt.lineTo(0.1*Width/3,0.0467*Width/4);
+	cxt.lineTo(0.025*Width,0.0467*Width/1.732);
+	cxt.fill();
+	cxt.closePath();
 
-	cxt.shadowColor = '#72FFEE';
-	cxt.strokeStyle = '#72FFEE';
-	cxt.shadowBlur = 5;
-	cxt.shadowOffsetY = 0;
-	cxt.shadowOffsetX = 0;
-	cxt.lineWidth = 3;
-
-	Draw_menu1(cxt,0);
-	Draw_menu2(cxt,0);
-	Draw_menu3(cxt,0);
-	Draw_menu4(cxt,0);
-}
-
-function Draw_menu1 (cxt,value) {
-	if (!value) {
-		cxt.beginPath();
-		cxt.fillStyle = '#FE00C3';
-		cxt.moveTo(0.14*Width/3,0.0467*Width/4 );
-		cxt.lineTo(0.19*Width/3,0.0467*Width/4 );
-		cxt.lineTo(0.055*Width,0.0467*Width/1.732);
-		cxt.fill();
-		cxt.closePath();
-
-		cxt.beginPath();
-		cxt.moveTo(0.03*Width,2);
-		cxt.lineTo(0.08*Width,2);
-		cxt.lineTo(0.055*Width,0.0467*Width);
-		cxt.lineTo(0.03*Width,2);
-		cxt.stroke();
-		cxt.closePath();
-	} else {
-		// cxt.save();
-		cxt.beginPath();
-		// cxt.translate(c.width/2,c.height/2);
-		// cxt.rotate(Math.PI);
-		cxt.fillStyle = '#FE00C3';
-		cxt.moveTo(0.14*Width/3,0.0467*Width/4);
-		cxt.lineTo(0.19*Width/3,0.0467*Width/4);
-		cxt.lineTo(0.055*Width,0.0467*Width/1.732);
-		cxt.fill();
-		cxt.closePath();
-
-		cxt.beginPath();
-		cxt.moveTo(0.03*Width,0);
-		cxt.lineTo(0.08*Width,0);
-		cxt.lineTo(0.055*Width,0.0467*Width);
-		cxt.lineTo(0.03*Width,0);
-		cxt.stroke();
-		cxt.closePath();
-		// cxt.restore();
-
-	}
+	cxt.beginPath();
+	cxt.moveTo(2,2);
+	cxt.lineTo(0.05*Width,2);
+	cxt.lineTo(0.025*Width,0.0467*Width - 2);
+	cxt.lineTo(2,2);
+	cxt.stroke();
+	cxt.closePath();
 }
 
 function Draw_menu2 (cxt,value) {
+	// console.log(cxt);
 	if (!value) {
 		cxt.beginPath();
 		cxt.fillStyle = '#1AA406';
@@ -282,7 +264,10 @@ function Draw_menu2 (cxt,value) {
 		cxt.closePath();
 
 	} else {
+		cxt.save();
 		cxt.beginPath();
+		cxt.translate(0.145*Width,0.13185*Width/4 + 100)
+		cxt.rotate(Math.PI);
 		cxt.fillStyle = '#1AA406';
 		cxt.moveTo(0.41*Width/3,0.1553*Width/4 + 100);
 		cxt.lineTo(0.46*Width/3,0.1553*Width/4 + 100);
@@ -296,6 +281,7 @@ function Draw_menu2 (cxt,value) {
 		cxt.lineTo(0.145*Width,0.0033*Width + 102);
 		cxt.lineTo(0.12*Width,0.05*Width + 100);
 		cxt.stroke();
+		cxt.restore();
 		cxt.closePath();
 	}
 }
