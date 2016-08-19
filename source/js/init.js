@@ -1,6 +1,13 @@
 //获取屏幕的大小
-var Height = document.body.clientHeight;
-var Width = document.body.clientWidth;
+var Height = document.body.clientHeight,
+	Width = document.body.clientWidth;
+
+//设置颜色常量
+var COLOR_1 = '#FE00C3',
+	COLOR_2 = '#1AA406',
+	COLOR_3 = '#214FE3',
+	COLOR_4 = '#DFB201';
+					
 
 window.onload = function () {
 	var c=document.getElementById("line_canvas");
@@ -33,7 +40,7 @@ window.onload = function () {
 		menu_tags[i].style.height = menu_tags[i].style.width;
 		menu_tags[i].style.marginLeft = 0.03*Width + 'px';
 		menu_tags[i].style.marginRight = 0.01*Width + 'px';
-		menu_canvas[i].width = 0.05*Width + 5;
+		menu_canvas[i].width = 0.06*Width;
 		menu_canvas[i].height = menu_canvas[i].width;
 		context[i] = menu_canvas[i].getContext('2d');
 		context[i].shadowColor = '#72FFEE';
@@ -45,37 +52,21 @@ window.onload = function () {
 
 		switch(i) {
 			case 0 :
-				Draw_menu1(context[0]);
+				Draw_menu(context[i],menu_canvas[i].width/2,i);
 				break;
 			case 1 :
-				Draw_menu2(context[1],0);
+				Draw_menu(context[i],menu_canvas[i].width/2,i);
 				break;
 			case 2 :
-				Draw_menu3(context[2],0);
+				Draw_menu(context[i],menu_canvas[i].width/2,i);
 				break;
 			case 3 :
-				Draw_menu4(context[3],0);
+				Draw_menu(context[i],menu_canvas[i].width/2,i);
 				break;
 		}
 
 		menu_tags[i].onmouseover = function () {
-			switch(this.index) {
-				case 0 :
-					context[0].translate(0,0);
-					context[0].rotate(Math.PI);
-					context[0].clearRect(0,0,menu_canvas[0].width,menu_canvas[0].height);
-					Draw_menu1(context[0]);
-					break;
-				case 1 :
-					Draw_menu2(context[1],1);
-					break;
-				case 2 :
-					Draw_menu3(context[2],1);
-					break;
-				case 3 :
-					Draw_menu4(context[3],1);
-					break;
-			}
+			animate(this.index,context[this.index],menu_canvas[this.index].width/2);			
 		}
 	}	
 }
@@ -226,136 +217,46 @@ function DrawLines(cxt) {
 	cxt.restore();
 }
 
-function Draw_menu1 (cxt) {
+// function animate(index,cxt,origin) {
+// 	var 
+//    	Draw_menu(cxt,orgin,index);    
+// }
+
+function Draw_menu (cxt,origin,n) {
 	cxt.beginPath();
-	cxt.fillStyle = '#FE00C3';
-	cxt.moveTo(0.05*Width/3,0.0467*Width/4);
-	cxt.lineTo(0.1*Width/3,0.0467*Width/4);
-	cxt.lineTo(0.025*Width,0.0467*Width/1.732);
+	cxt.translate(origin,origin);
+	if (n % 2 == 0) {
+		cxt.rotate(Math.PI);
+	}
+	// cxt.rotate(Math.PI/3);
+	switch (n) {
+		case 0:
+			cxt.fillStyle = COLOR_1;
+			break;
+		case 1:
+			cxt.fillStyle = COLOR_2;
+			break;
+		case 2:
+			cxt.fillStyle = COLOR_3;
+			break;
+		case 3:
+			cxt.fillStyle = COLOR_4;
+			break;
+	}
+	
+	cxt.moveTo(-0.025*Width/3,-0.0234*Width/2);
+	cxt.lineTo(0.025*Width/3,-0.0234*Width/2);
+	cxt.lineTo(0,0.0234*Width/4);
 	cxt.fill();
 	cxt.closePath();
 
 	cxt.beginPath();
-	cxt.moveTo(2,2);
-	cxt.lineTo(0.05*Width,2);
-	cxt.lineTo(0.025*Width,0.0467*Width - 2);
-	cxt.lineTo(2,2);
+	cxt.moveTo(-0.025*Width,-0.0234*Width);
+	cxt.lineTo(0.025*Width,-0.0234*Width);
+	cxt.lineTo(0,0.025*Width);
+	cxt.lineTo(-0.025*Width,-0.0234*Width);
 	cxt.stroke();
 	cxt.closePath();
 }
 
-function Draw_menu2 (cxt,value) {
-	// console.log(cxt);
-	if (!value) {
-		cxt.beginPath();
-		cxt.fillStyle = '#1AA406';
-		cxt.moveTo(0.41*Width/3,0.1553*Width/4 + 100);
-		cxt.lineTo(0.46*Width/3,0.1553*Width/4 + 100);
-		cxt.lineTo(0.145*Width,0.1086*Width/4 + 98);
-		cxt.fill();
-		cxt.closePath();
 
-		cxt.beginPath();
-		cxt.moveTo(0.12*Width,0.05*Width + 100);
-		cxt.lineTo(0.17*Width,0.05*Width + 100);
-		cxt.lineTo(0.145*Width,0.0033*Width + 102);
-		cxt.lineTo(0.12*Width,0.05*Width + 100);
-		cxt.stroke();
-		cxt.closePath();
-
-	} else {
-		cxt.save();
-		cxt.beginPath();
-		cxt.translate(0.145*Width,0.13185*Width/4 + 100)
-		cxt.rotate(Math.PI);
-		cxt.fillStyle = '#1AA406';
-		cxt.moveTo(0.41*Width/3,0.1553*Width/4 + 100);
-		cxt.lineTo(0.46*Width/3,0.1553*Width/4 + 100);
-		cxt.lineTo(0.145*Width,0.1086*Width/4 + 98);
-		cxt.fill();
-		cxt.closePath();
-
-		cxt.beginPath();
-		cxt.moveTo(0.12*Width,0.05*Width + 100);
-		cxt.lineTo(0.17*Width,0.05*Width + 100);
-		cxt.lineTo(0.145*Width,0.0033*Width + 102);
-		cxt.lineTo(0.12*Width,0.05*Width + 100);
-		cxt.stroke();
-		cxt.restore();
-		cxt.closePath();
-	}
-}
-
-function Draw_menu3 (cxt,value) {
-	if (!value) {
-		cxt.beginPath();
-		cxt.fillStyle = '#214FE3';
-		cxt.moveTo(0.68*Width/3,0.0467*Width/4);
-		cxt.lineTo(0.73*Width/3,0.0467*Width/4);
-		cxt.lineTo(0.235*Width,0.0467*Width/1.732);	
-		cxt.fill();
-		cxt.closePath();
-
-		cxt.beginPath();
-		cxt.moveTo(0.21*Width,2);
-		cxt.lineTo(0.26*Width,2);
-		cxt.lineTo(0.235*Width,0.0467*Width);
-		cxt.lineTo(0.21*Width,2);
-		cxt.stroke();
-		cxt.closePath();
-	} else {
-		cxt.beginPath();
-		cxt.fillStyle = '#214FE3';
-		cxt.moveTo(0.68*Width/3,0.0467*Width/4);
-		cxt.lineTo(0.73*Width/3,0.0467*Width/4);
-		cxt.lineTo(0.235*Width,0.0467*Width/1.732);	
-		cxt.fill();
-		cxt.closePath();
-
-		cxt.beginPath();
-		cxt.moveTo(0.21*Width,0);
-		cxt.lineTo(0.26*Width,0);
-		cxt.lineTo(0.235*Width,0.0467*Width);
-		cxt.lineTo(0.21*Width,0);
-		cxt.stroke();
-		cxt.closePath();
-	}
-
-}
-
-function Draw_menu4 (cxt,value) {
-	if (!value) {
-		cxt.beginPath();
-		cxt.fillStyle = '#DFB201';
-		cxt.moveTo(0.95*Width/3,0.1553*Width/4 + 100);
-		cxt.lineTo(1*Width/3,0.1553*Width/4 + 100);
-		cxt.lineTo(0.325*Width,0.1086*Width/4 + 98);
-		cxt.fill();
-		cxt.closePath();
-
-		cxt.beginPath();
-		cxt.moveTo(0.30*Width,0.05*Width + 100);
-		cxt.lineTo(0.35*Width,0.05*Width + 100);
-		cxt.lineTo(0.325*Width,0.0033*Width + 102);
-		cxt.lineTo(0.30*Width,0.05*Width + 100);
-		cxt.stroke();
-		cxt.closePath();
-	} else {
-		cxt.beginPath();
-		cxt.fillStyle = '#DFB201';
-		cxt.moveTo(0.95*Width/3,0.1553*Width/4 + 100);
-		cxt.lineTo(1*Width/3,0.1553*Width/4 + 100);
-		cxt.lineTo(0.325*Width,0.1086*Width/4 + 98);
-		cxt.fill();
-		cxt.closePath();
-
-		cxt.beginPath();
-		cxt.moveTo(0.30*Width,0.05*Width + 100);
-		cxt.lineTo(0.35*Width,0.05*Width + 100);
-		cxt.lineTo(0.325*Width,0.0033*Width + 102);
-		cxt.lineTo(0.30*Width,0.05*Width + 100);
-		cxt.stroke();
-		cxt.closePath();
-	}
-	
-}
