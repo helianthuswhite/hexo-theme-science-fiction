@@ -69,9 +69,11 @@ window.onload = function () {
 		}
 
 		menu_tags[i].onmouseover = function () {
-			// animate(this.index,context[this.index],menu_canvas[this.index].width/2);
-			count += 30;
-			Draw_menu(context[this.index],menu_canvas[this.index].width/2,this.index);
+			count = 0;
+			animate(this.index,context[this.index],menu_canvas[this.index].width/2,true);
+		}
+		menu_tags[i].onmouseout = function () {
+			animate(this.index,context[this.index],menu_canvas[this.index].width/2,false);
 		}
 	}	
 }
@@ -222,30 +224,28 @@ function DrawLines(cxt) {
 	cxt.restore();
 }
 
-function animate(index,cxt,origin) {
+function animate(index,cxt,origin,signal) {
 
-    // reqAnimFrame = window.mozRequestAnimationFrame    ||
-    //             window.webkitRequestAnimationFrame 	||
-    //             window.msRequestAnimationFrame     ||
-    //             window.oRequestAnimationFrame
-    //             ;
-
-    // reqAnimFrame(function() {
-    // 	if (count > 180) {
-    // 		reqAnimFrame(arguments.callee);
-    // 	}
-    	// console.log(cxt);
-    	if (!cxt) {
-    		return;
+	var timer = setInterval(function() {
+		if (!cxt) {
+			return;
+		}
+		Draw_menu(cxt,origin,index);  
+		if (!signal) {
+			count -= 10;
+		} else {
+			count += 10; 
+		}
+    	if (count > 180 || count < 0) {
+    		clearInterval(timer);    	
     	}
-    	// cxt.clearRect(0,0,origin*2,origin*2);
-    	Draw_menu(cxt,origin,index);  
-    	count++;
-    // });	  
+    },16);
 }
 
 function Draw_menu (cxt,origin,n) {
+	cxt.clearRect(0,0,origin*2,origin*2);
 	cxt.beginPath();
+	cxt.save();
 	cxt.translate(origin,origin);
 	if (n % 2 == 0) {
 		cxt.rotate(Math.PI);
@@ -278,6 +278,7 @@ function Draw_menu (cxt,origin,n) {
 	cxt.lineTo(0,0.025*Width);
 	cxt.lineTo(-0.025*Width,-0.0234*Width);
 	cxt.stroke();
+	cxt.restore();
 	cxt.closePath();
 }
 
