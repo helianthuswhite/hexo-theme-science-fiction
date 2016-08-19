@@ -7,6 +7,9 @@ var COLOR_1 = '#FE00C3',
 	COLOR_2 = '#1AA406',
 	COLOR_3 = '#214FE3',
 	COLOR_4 = '#DFB201';
+
+//动画参数
+var count = 0;
 					
 
 window.onload = function () {
@@ -66,7 +69,9 @@ window.onload = function () {
 		}
 
 		menu_tags[i].onmouseover = function () {
-			animate(this.index,context[this.index],menu_canvas[this.index].width/2);			
+			// animate(this.index,context[this.index],menu_canvas[this.index].width/2);
+			count += 30;
+			Draw_menu(context[this.index],menu_canvas[this.index].width/2,this.index);
 		}
 	}	
 }
@@ -217,10 +222,27 @@ function DrawLines(cxt) {
 	cxt.restore();
 }
 
-// function animate(index,cxt,origin) {
-// 	var 
-//    	Draw_menu(cxt,orgin,index);    
-// }
+function animate(index,cxt,origin) {
+
+    // reqAnimFrame = window.mozRequestAnimationFrame    ||
+    //             window.webkitRequestAnimationFrame 	||
+    //             window.msRequestAnimationFrame     ||
+    //             window.oRequestAnimationFrame
+    //             ;
+
+    // reqAnimFrame(function() {
+    // 	if (count > 180) {
+    // 		reqAnimFrame(arguments.callee);
+    // 	}
+    	// console.log(cxt);
+    	if (!cxt) {
+    		return;
+    	}
+    	// cxt.clearRect(0,0,origin*2,origin*2);
+    	Draw_menu(cxt,origin,index);  
+    	count++;
+    // });	  
+}
 
 function Draw_menu (cxt,origin,n) {
 	cxt.beginPath();
@@ -228,7 +250,7 @@ function Draw_menu (cxt,origin,n) {
 	if (n % 2 == 0) {
 		cxt.rotate(Math.PI);
 	}
-	// cxt.rotate(Math.PI/3);
+	cxt.rotate(count*Math.PI/180);
 	switch (n) {
 		case 0:
 			cxt.fillStyle = COLOR_1;
