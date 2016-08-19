@@ -236,8 +236,14 @@ function animate(index,cxt,origin,signal) {
 		} else {
 			count += 10; 
 		}
-    	if (count > 180 || count < 0) {
+    	if (count >= 180) {
     		clearInterval(timer);    	
+    		var spans = document.getElementById('index_menu').getElementsByTagName('span');
+    		spans[index].style.display = 'block';
+    	}
+    	if (count <= 0) {
+    		clearInterval(timer);    	
+    		spans[index].style.display = 'none';
     	}
     },16);
 }
@@ -247,7 +253,7 @@ function Draw_menu (cxt,origin,n) {
 	cxt.beginPath();
 	cxt.save();
 	cxt.translate(origin,origin);
-	if (n % 2 == 0) {
+	if (n % 2 != 0) {
 		cxt.rotate(Math.PI);
 	}
 	cxt.rotate(count*Math.PI/180);
