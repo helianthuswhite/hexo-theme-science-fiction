@@ -236,14 +236,15 @@ function animate(index,cxt,origin,signal) {
 		} else {
 			count += 10; 
 		}
-    	if (count >= 180) {
+    	if (count > 180) {
     		clearInterval(timer);    	
     		var spans = document.getElementById('index_menu').getElementsByTagName('span');
-    		spans[index].style.display = 'block';
+    		spans[2*index].style.display = 'block';
     	}
-    	if (count <= 0) {
+    	if (count < 0) {
     		clearInterval(timer);    	
-    		spans[index].style.display = 'none';
+    		var spans = document.getElementById('index_menu').getElementsByTagName('span');
+    		spans[2*index].style.display = 'none';
     	}
     },16);
 }
