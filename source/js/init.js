@@ -70,10 +70,10 @@ window.onload = function () {
 
 		menu_tags[i].onmouseover = function () {
 			count = 0;
-			animate(this.index,context[this.index],menu_canvas[this.index].width/2,true);
+			MenuAnimate(this.index,context[this.index],menu_canvas[this.index].width/2,true);
 		}
 		menu_tags[i].onmouseout = function () {
-			animate(this.index,context[this.index],menu_canvas[this.index].width/2,false);
+			MenuAnimate(this.index,context[this.index],menu_canvas[this.index].width/2,false);
 		}
 	}	
 }
@@ -224,7 +224,7 @@ function DrawLines(cxt) {
 	cxt.restore();
 }
 
-function animate(index,cxt,origin,signal) {
+function MenuAnimate(index,cxt,origin,signal) {
 
 	var timer = setInterval(function() {
 		if (!cxt) {
