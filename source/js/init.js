@@ -10,7 +10,7 @@ var COLOR_1 = '#FE00C3',
 
 //动画参数
 var count = 0;
-					
+var timer = null;				
 
 window.onload = function () {
 	var c=document.getElementById("line_canvas");
@@ -225,8 +225,8 @@ function DrawLines(cxt) {
 }
 
 function MenuAnimate(index,cxt,origin,signal) {
-
-	var timer = setInterval(function() {
+	clearInterval(timer);
+	timer = setInterval(function() {
 		if (!cxt) {
 			return;
 		}

@@ -1,6 +1,8 @@
 
 author: HelianthusWhite
 photo: /img/photo.jpg
+title: White
+language: en
 
 #
 introduction: 
@@ -26,11 +28,6 @@ contact_logo:
 - mortar-board
 - weibo
 - google
-
-# html lang
-language: en
-
-title: HelianthusWhite
 
 # main menu navigation
 # four limited
