@@ -171,3 +171,10 @@
   right: 50px;
   color: #77C0FD;
 }
+#main_body {
+  position: absolute;
+  background: #fff;
+}
+#archive > h1 {
+  
+}

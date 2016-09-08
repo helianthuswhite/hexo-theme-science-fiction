@@ -58,11 +58,16 @@ main_scripts:
 - /js/projector.js
 - /js/canvas-renderer.js
 - /js/3d-lines-animation.js
+- /js/init.js
 
 # scripts loaded in each page
 index_scripts: 
-- /js/init.js
 - /js/index.js
+
+archives_scripts: 
+- /js/archives.js
+
+
 
 
 

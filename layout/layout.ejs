@@ -39,8 +39,14 @@ pageTitle += ' [ ' + theme.title + ' ]';
 
 <div id="content-outer">
   <div id="content-inner">
-    <%- body %>
-  </div>
+    <div class="background">
+      <canvas id="line_canvas" style=""></canvas>
+      <canvas id="circle_canvas" width="150" height="150"></canvas>
+    </div>
+    <div id="main_body">
+      <%- body %>
+    </div>
+    </div>
 </div>
 
 <div id="bottom-outer">

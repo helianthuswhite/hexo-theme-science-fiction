@@ -1,6 +1,3 @@
-<div class="background">
-    <canvas id="line_canvas" style=""></canvas>
-</div>
 <%
 var categoriesList = list_categories({ show_count: false }),
   tagsList = list_tags({ show_count: false }),
@@ -76,3 +73,11 @@ var categoriesList = list_categories({ show_count: false }),
 <% } %>
 
 <%-partial('partials/pagination')%>
+
+<% if (theme.archives_scripts !== undefined && theme.archives_scripts.length > 0) { %>
+  <!-- scripts list from theme config.yml -->
+  <% theme.archives_scripts.forEach(function(url) { %>
+    <script src="<%=url%>"></script>
+  <% }); %>
+<% } %>
+
