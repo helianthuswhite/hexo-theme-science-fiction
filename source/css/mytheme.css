@@ -165,3 +165,9 @@
 #index_menu .menu_canvas {
   position: absolute;
 }
+#bottom-outer {
+  position: absolute;
+  bottom: 15px;
+  right: 50px;
+  color: #77C0FD;
+}

@@ -3,6 +3,11 @@ author: HelianthusWhite
 photo: /img/photo.jpg
 title: White
 language: en
+copyright: Hexo theme By HelianthusWhite
+
+# this will influence your SEO
+keywords: 前端、H5、CSS3、Node、个人博客、Hexo、github、JS、哈工大
+description: 一个前端工程师的个人Hexo博客
 
 #
 introduction: 
@@ -47,13 +52,17 @@ stylesheets:
 - /css/reset.css
 - /css/font-awesome.min.css
 
-# scripts loaded in the end of the body
-scripts:
+# scripts loaded in the layout
+main_scripts:
 - /js/three.min.js
 - /js/projector.js
 - /js/canvas-renderer.js
 - /js/3d-lines-animation.js
+
+# scripts loaded in each page
+index_scripts: 
 - /js/init.js
+- /js/index.js
 
 
 

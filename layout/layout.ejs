@@ -14,6 +14,14 @@ pageTitle += ' [ ' + theme.title + ' ]';
 <head>
   <meta charset="UTF-8">
   <title><%=pageTitle%></title>
+   <!--设置浏览器兼容模式 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <!--支持响应式 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 网站关键字，影响SEO -->
+  <meta name="keywords" content="<%=theme.keywords%>">
+  <!--网站描述，影响SEO -->
+  <meta name="description" content="<%=theme.description%>">
   <% if (theme.stylesheets !== undefined && theme.stylesheets.length > 0) { %>
     <!-- stylesheets list from config.yml -->
     <% theme.stylesheets.forEach(function(url) { %>
@@ -36,17 +44,12 @@ pageTitle += ' [ ' + theme.title + ' ]';
 </div>
 
 <div id="bottom-outer">
-  <div id="bottom-inner">
-    Site by <%=theme.author%> using
-    <a href="http://hexo.io">hexo blog framework</a>.
-    <br>
-    <a href="<%=config.root%>">Home</a>
-  </div>
+  <div id="bottom-inner">&copy;&nbsp;<%=theme.copyright%></div>
 </div>
 
-<% if (theme.scripts !== undefined && theme.scripts.length > 0) { %>
+<% if (theme.main_scripts !== undefined && theme.main_scripts.length > 0) { %>
   <!-- scripts list from theme config.yml -->
-  <% theme.scripts.forEach(function(url) { %>
+  <% theme.main_scripts.forEach(function(url) { %>
     <script src="<%=url%>"></script>
   <% }); %>
 <% } %>
