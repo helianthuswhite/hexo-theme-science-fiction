@@ -17,8 +17,8 @@ var categoriesList = list_categories({ show_count: false }),
       <br>
     <% } %>
 
-    <aside>
-      <h2>Categories</h2>
+    <aside class="categories">
+      <h2><span>目录</span></h2>
       <% if (categoriesList) { %>
         <%-categoriesList%>
       <% } else { %>
@@ -26,8 +26,8 @@ var categoriesList = list_categories({ show_count: false }),
       <% } %>
     </aside>
 
-    <aside>
-      <h2>Tags</h2>
+    <aside class="tags">
+      <h2><span>标签</span></h2>
       <% if (tagsList) { %>
         <%-tagsList%>
       <% } else { %>
@@ -35,8 +35,8 @@ var categoriesList = list_categories({ show_count: false }),
       <% } %>
     </aside>
 
-    <aside>
-      <h2>Archives</h2>
+    <aside class="archives">
+      <h2><span>分类</span></h2>
       <% if (archivesList) { %>
         <%-archivesList%>
       <% } else { %>
