@@ -171,10 +171,21 @@
   right: 50px;
   color: #77C0FD;
 }
-#main_body {
+#archive {
   position: absolute;
+  left: 20%;
+  top: 25%;
+  width: 60%;
+  height: 50%;
   background: #fff;
 }
 #archive > h1 {
   
+}
+#archive aside {
+  float: left;
+  width: 29%;
+  height: 80%;
+  margin: 0 20px;
+  border: solid 1px #72FFEE;
 }

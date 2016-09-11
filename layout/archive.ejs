@@ -25,7 +25,6 @@ var categoriesList = list_categories({ show_count: false }),
         <p>None.</p>
       <% } %>
     </aside>
-    <br>
 
     <aside>
       <h2>Tags</h2>
@@ -35,7 +34,6 @@ var categoriesList = list_categories({ show_count: false }),
         <p>None.</p>
       <% } %>
     </aside>
-    <br>
 
     <aside>
       <h2>Archives</h2>
@@ -71,8 +69,6 @@ var categoriesList = list_categories({ show_count: false }),
   <% }); %>
 
 <% } %>
-
-<%-partial('partials/pagination')%>
 
 <% if (theme.archives_scripts !== undefined && theme.archives_scripts.length > 0) { %>
   <!-- scripts list from theme config.yml -->
