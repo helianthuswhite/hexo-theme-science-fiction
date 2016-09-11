@@ -174,18 +174,41 @@
 #archive {
   position: absolute;
   left: 20%;
-  top: 25%;
+  top: 35%;
   width: 60%;
-  height: 50%;
+  height: 40%;
   background: #fff;
 }
 #archive > h1 {
-  
+  position: absolute;
+  left: -20%;
+  top: -40%;
+  color: #72FFEE;
+  animation: text_color 2s ease-in-out infinite alternate;
+  padding: 20px 40px;
+  background: rgba(119,192,253,0.2);
+}
+#archive > h1 span {
+  display: block;
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  border: solid 1px #72FFEE;
+  box-shadow: 0 0 5px 0 #72FFEE;
+  animation: scan 2s linear 1s alternate infinite;
+}
+@keyframes scan {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 100%;
+  }
 }
 #archive aside {
   float: left;
   width: 29%;
-  height: 80%;
+  height: 100%;
   margin: 0 20px;
   border: solid 1px #72FFEE;
 }
