@@ -210,7 +210,7 @@
   left: 0px;
   width: 100%;
   border: solid 1px #72FFEE;
-  box-shadow: 0 0 5px 0 #F7C904;
+  box-shadow: 0 0 5px 0 #72FFEE;
   animation: scan 2s linear 1s alternate infinite;
 }
 @keyframes scan {
