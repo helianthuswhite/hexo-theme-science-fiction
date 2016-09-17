@@ -193,16 +193,16 @@
   right: -26%;
   bottom: -30%;
   padding: 1.5% 3.5%;
-  background: rgba(247,201,4,0.2);
-  border: dashed 3px #f00;
-  box-shadow: 0 0 10px 0 #F7C904;
+  background: rgba(119,192,253,0.2);
+  border: dashed 3px #72FFEE;
+  box-shadow: 0 0 10px 0 #72C0FD;
 }
 #archive #archive_back a {
   display: block;
   width: 100%;
   height: 100%;
   text-decoration: none;
-  color: #F7C904;
+  color: #72FFEE;
 }
 #archive > h1 span {
   display: block;
@@ -227,43 +227,26 @@
   width: 29%;
   height: 100%;
   margin: 0 2%;
-  border: solid 1px #77C0FD;
-  box-shadow: 0 0 5px 0 #77FFEE;
+  /*border-bottom: solid 1px #77C0FD;*/
+  /*box-shadow: 0 0 5px 0 #77FFEE;*/
 }
 #archive aside h2 {
   position: absolute;
   left: 27.5%;
   top: -25%;
   width: 7.5vw;
-  height: 7.5vw;
-  text-align: center;
-  line-height: 7.5vw;
+  height: 3.5vw;
   color: #72ffee;
-  border: solid 5px #72ffee;
-  border-radius: 50%;
-}
-#archive aside h2 span {
-  display: block;
-  width: 100%;
-  height: 100%;
-  color: #fff;
-  border-radius: 50%;
+  text-align: center;
+  line-height: 3.5vw;
   transition: transform 2s;
+  border-top: solid 5px #72ffee;
+  border-bottom: solid 5px #72ffee;
 }
-#archive aside h2 span:hover {
-  transform: rotateZ(360deg);
-}
-#archive .categories h2 span {
-  background: rgba(0,255,0,0.5);
-}
-#archive .tags h2 span {
-  background: rgba(255,0,0,0.5);
-}
-#archive .archives h2 span {
-  background: rgba(0,0,255,0.5);
+#archive aside h2:hover {
+  transform: rotateY(360deg);
 }
 #archive aside ul {
-  margin-top: 40px;
   padding: 5px 10px;
   /*border-top: solid 1px #72ffee;*/
 }

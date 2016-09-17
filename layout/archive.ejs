@@ -19,7 +19,7 @@ var categoriesList = list_categories({ show_count: false }),
     <% } %>
 
     <aside class="categories">
-      <h2><span>目录</span></h2>
+      <h2>目录</h2>
       <% if (categoriesList) { %>
         <%-categoriesList%>
       <% } else { %>
@@ -28,16 +28,19 @@ var categoriesList = list_categories({ show_count: false }),
     </aside>
 
     <aside class="tags">
-      <h2><span>标签</span></h2>
+      <h2>标签</h2>
       <% if (tagsList) { %>
         <%-tagsList%>
       <% } else { %>
         <p>None.</p>
       <% } %>
+
+      <%-partial('partials/pagination')%>
+      
     </aside>
 
     <aside class="archives">
-      <h2><span>分类</span></h2>
+      <h2>分类</h2>
       <% if (archivesList) { %>
         <%-archivesList%>
       <% } else { %>
