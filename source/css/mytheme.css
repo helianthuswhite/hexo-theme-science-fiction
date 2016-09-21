@@ -253,6 +253,7 @@
   justify-content:space-between;
   align-content: flex-start;
   overflow: hidden;
+  margin-top: 0;
 }
 #archive aside ul li {
   flex: 0 1 auto;

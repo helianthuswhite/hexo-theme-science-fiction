@@ -9,8 +9,7 @@ function addPagination(obj,num) {
 	var parent = obj.parentNode.parentNode;
 	var ul = parent.getElementsByTagName('ul');
 	var currentMargin = ul[0].style.marginTop;
-	console.log(currentMargin);
-	ul[0].removeAttribute('margin-top');
-	ul[0].style.marginTop += -100*num + '%';
+	currentMargin = currentMargin.slice(0,-1);
+	ul[0].style.marginTop = currentMargin - 100*num + '%';
 	console.log(ul[0].style.marginTop);
 }
