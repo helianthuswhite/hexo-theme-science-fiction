@@ -224,7 +224,7 @@
 #archive aside {
   position: relative;
   float: left;
-  width: 29%;
+  width: 28%;
   height: 100%;
   margin: 0 2%;
   /*border-bottom: solid 1px #77C0FD;*/
@@ -243,12 +243,20 @@
   border-top: solid 5px #72ffee;
   border-bottom: solid 5px #72ffee;
 }
-#archive aside h2:hover {
+/*#archive aside h2:hover {
   transform: rotateY(360deg);
-}
+}*/
 #archive aside ul {
   padding: 5px 10px;
-  /*border-top: solid 1px #72ffee;*/
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction:row;
+  justify-content:space-between;
+  align-content: flex-start;
+  /*border: solid 1px #72ffee;*/
+}
+#archive aside ul li {
+  flex: 0 1 auto;
 }
 #archive aside ul a {
   display: inline-block;
@@ -256,6 +264,8 @@
   color: #000;
   text-decoration: none;
   padding: 0px 15px;
+  margin: 10px 10px;
+  white-space: nowrap;
   background: #72ffee;
 }
 #category {
