@@ -20,32 +20,59 @@ var categoriesList = list_categories({ show_count: false }),
 
     <aside class="categories">
       <h2>目录</h2>
-      <% if (categoriesList) { %>
-        <%-categoriesList%>
-      <% } else { %>
-        <p>None.</p>
-      <% } %>
+      <div class="ul-box">
+        <% if (categoriesList) { %>
+          <%-categoriesList%>
+        <% } else { %>
+          <p>None.</p>
+        <% } %>
+      </div>
 
+      <nav class="pagination">
+        <a onclick="addPagination(this,-1);" class="prev">上一页</a>
+        <span class="page-number">
+          第<span class="number">1</span>页
+        </span>
+        <a onclick="addPagination(this,1);" class="next">下一页</a>
+      </nav>
     </aside>
 
     <aside class="tags">
       <h2>标签</h2>
-      <% if (tagsList) { %>
-        <%-tagsList%>
-      <% } else { %>
-        <p>None.</p>
-      <% } %>
+      <div class="ul-box">
+        <% if (tagsList) { %>
+          <%-tagsList%>
+        <% } else { %>
+          <p>None.</p>
+        <% } %>
+      </div>
 
+      <nav class="pagination">
+        <a onclick="addPagination(this,-1);" class="prev">上一页</a>
+        <span class="page-number">
+          第<span class="number">1</span>页
+        </span>
+        <a onclick="addPagination(this,1);" class="next">下一页</a>
+      </nav>
     </aside>
 
     <aside class="archives">
       <h2>分类</h2>
-      <% if (archivesList) { %>
-        <%-archivesList%>
-      <% } else { %>
-        <p>None.</p>
-      <% } %>
-
+      <div class="ul-box">
+        <% if (archivesList) { %>
+          <%-archivesList%>
+        <% } else { %>
+          <p>None.</p>
+        <% } %>
+      </div>
+      
+      <nav class="pagination">
+        <a onclick="addPagination(this,-1);" class="prev">上一页</a>
+        <span class="page-number">
+          第<span class="number">1</span>页
+        </span>
+        <a onclick="addPagination(this,1);" class="next">下一页</a>
+      </nav>
     </aside>
     
     <div id="archive_back">

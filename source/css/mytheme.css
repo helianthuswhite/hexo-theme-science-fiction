@@ -227,8 +227,6 @@
   width: 28%;
   height: 100%;
   margin: 0 2%;
-  /*border-bottom: solid 1px #77C0FD;*/
-  /*box-shadow: 0 0 5px 0 #77FFEE;*/
 }
 #archive aside h2 {
   position: absolute;
@@ -243,9 +241,10 @@
   border-top: solid 5px #72ffee;
   border-bottom: solid 5px #72ffee;
 }
-/*#archive aside h2:hover {
-  transform: rotateY(360deg);
-}*/
+#archive aside .ul-box {
+  height: 92%;
+  overflow: hidden;
+}
 #archive aside ul {
   padding: 5px 10px;
   display:flex;
@@ -253,7 +252,7 @@
   flex-direction:row;
   justify-content:space-between;
   align-content: flex-start;
-  /*border: solid 1px #72ffee;*/
+  overflow: hidden;
 }
 #archive aside ul li {
   flex: 0 1 auto;
@@ -267,6 +266,27 @@
   margin: 10px 10px;
   white-space: nowrap;
   background: #72ffee;
+}
+#archive aside .pagination {
+  margin: 15px 0px;
+  display:flex;
+  flex-wrap: nowrap;
+  flex-direction:row;
+  justify-content:space-around;
+  border-top: solid 2px #72ffee;
+  border-bottom: solid 2px #72ffee;
+}
+#archive aside .pagination a,
+#archive aside .pagination span {
+  text-align: center;
+  flex: 1;
+}
+#archive aside .pagination a:hover {
+  text-decoration: none;
+  color: #72ffee;
+}
+#archive aside .pagination span {
+  color: #1abc9c;
 }
 #category {
   position: absolute;
